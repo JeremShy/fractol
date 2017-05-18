@@ -1,6 +1,12 @@
 SRC_NAME = main.c
 
+LIBFT_N = lib/libft.a
+LIBFTPRINTF_N = lib/libftprintf.a
+LIBMLX_N = lib/libmlx.a
+
 OBJ_PATH = ./obj/
+
+LIB_PATH = ./lib/
 
 INC_PATH = ./includes
 
@@ -16,34 +22,44 @@ OBJ_NAME = $(SRC_NAME:.c=.o)
 
 SRC = $(addprefix $(SRC_PATH),$(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH),$(OBJ_NAME))
+LIB = $(addprefix $(OBJ_PATH),$(OBJ_NAME))
 INC = $(addprefix -I,$(INC_PATH))
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
+$(LIBFT_N) :
 	@mkdir -p lib
 	make -C libsrcs/libft
+
+$(LIBFTPRINTF_N) :
+	@mkdir -p lib
 	make -C libsrcs/ft_printf
+
+$(LIBMLX_N) :
+	@mkdir -p lib
 	make -C libsrcs/mlx
+
+$(NAME) : $(LIBFT_N) $(LIBFTPRINTF_N) $(LIBMLX_N) $(OBJ)
+	@mkdir -p lib
 	$(CC) $(LFLAGS) $(INC) -o $@ $^
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	@mkdir $(OBJ_PATH) 2> /dev/null || echo "" > /dev/null
+	@mkdir $(OBJ_PATH) 2> /dev/null || true
 	$(CC) $(CFLAGS) $(INC) -o $@ -c $<
 
 clean:
 	/bin/rm -fv $(OBJ)
-	@rmdir $(OBJ_PATH) 2> /dev/null || echo "" > /dev/null
-	make -C libsrcs/libft clean
-	make -C libsrcs/ft_printf clean
-	make -C libsrcs/mlx clean
+	@rmdir $(OBJ_PATH) 2> /dev/null || true
+#	make -C libsrcs/libft clean
+#	make -C libsrcs/ft_printf clean
+#	make -C libsrcs/mlx clean
 
 fclean: clean
 	rm -fv $(NAME)
-	make -C libsrcs/libft fclean
-	make -C libsrcs/ft_printf fclean
-	make -C libsrcs/mlx fclean
-	@rmdir lib
+#	make -C libsrcs/libft fclean
+#	make -C libsrcs/ft_printf fclean
+#	make -C libsrcs/mlx fclean
+#	@rmdir lib 2> /dev/null || true
 
 re: fclean all
 
