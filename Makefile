@@ -1,5 +1,6 @@
 SRC_NAME = main.c \
-						utils.c
+						utils.c \
+						mlx_func.c
 
 LIBFT_N = lib/libft.a
 LIBFTPRINTF_N = lib/libftprintf.a
