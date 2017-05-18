@@ -1,15 +1,18 @@
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-#include <ft_printf.h>
-#include <libft.h>
-#include <mlx.h>
+# define WIN_SIZE 840
+
+# include <ft_printf.h>
+# include <libft.h>
+# include <mlx.h>
 
 typedef struct	s_data
 {
-	void	*win;
 	void	*mlx;
+	void	*win;
 }				t_data;
 
+int				handle_error_void(void *variable, void *error_value, char *msg);
 
 #endif

@@ -1,4 +1,5 @@
-SRC_NAME = main.c
+SRC_NAME = main.c \
+						utils.c
 
 LIBFT_N = lib/libft.a
 LIBFTPRINTF_N = lib/libftprintf.a
@@ -14,7 +15,9 @@ NAME = fractol
 
 CC = gcc
 
-CFLAGS = -Werror -Wextra -Wall -g
+# CFLAGS = -Werror -Wextra -Wall -g
+
+CFLAGS = -g
 
 LFLAGS = -Llib/ -lft -lftprintf -lmlx
 
@@ -41,7 +44,7 @@ $(LIBMLX_N) :
 
 $(NAME) : $(LIBFT_N) $(LIBFTPRINTF_N) $(LIBMLX_N) $(OBJ)
 	@mkdir -p lib
-	$(CC) $(LFLAGS) $(INC) -o $@ $^
+	$(CC) $(LFLAGS) $(INC) -o $@ $^ -framework OpenGL -framework AppKit
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
