@@ -3,6 +3,7 @@
 
 #include <ft_printf.h>
 #include <libft.h>
+#include <mlx.h>
 
 typedef struct	s_data
 {
