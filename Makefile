@@ -2,7 +2,10 @@ SRC_NAME = main.c \
 						utils.c \
 						mlx_img_func.c \
 						mlx_general_func.c \
-						hook_func.c
+						hook_func.c \
+						mandelbrot.c \
+						complexe_nbr.c \
+						calculs_repere.c
 
 LIBFT_N = lib/libft.a
 LIBFTPRINTF_N = lib/libftprintf.a
@@ -20,7 +23,7 @@ CC = gcc
 
 # CFLAGS = -Werror -Wextra -Wall -g
 
-CFLAGS = -g
+CFLAGS = -g -Wextra -Wall
 
 LFLAGS = -Llib/ -lft -lftprintf -lmlx
 

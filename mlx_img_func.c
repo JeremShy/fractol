@@ -7,7 +7,6 @@ int		get_color_code(int r, int v, int b)
 
 void	put_pixel_to_image(t_data *data, int color, int x, int y)
 {
-	char		*img;
 	size_t		value;
 
 	value = mlx_get_color_value(data->mlx, color);
@@ -22,7 +21,7 @@ void	clear_image(t_data *data)
 	size_t	i;
 
 	i = 0;
-	while (i < WIN_SIZE * data->size_line)
+	while (i < (size_t)(WIN_SIZE * data->size_line))
 	{
 		(data->addr)[i] = 0;
 		i++;

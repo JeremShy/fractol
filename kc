@@ -1,5 +1,13 @@
+=== SOURIS ===
+Clic Gauche		:	1
+Clic Droit		:	2
+Mollette Haut :	5
+Mollette Bas	:	4
+=== CLAVIER ===
 Escape	:	53
 Up			:	126
 Down		:	125
 Left		:	123
 Right		:	124
+N				:	45
+M				:	46
