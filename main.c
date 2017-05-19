@@ -5,7 +5,7 @@ int	main()
 	t_data data;
 
 	ft_printf("Hi sir !\n");
-	printf("%f\n", conv_rep_to_win(2, 1, 4.2));
+	printf("%f\n", conv_win_to_rep(1, 0.1, 4.2));
 	data.iteration_number = DEFAULT_ITERATION_NBR;
 	data.fractal = mandelbrot;
 	if (!init_the_mlx(&data))

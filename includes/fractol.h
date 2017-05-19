@@ -1,7 +1,7 @@
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define WIN_SIZE 1200
+# define WIN_SIZE 840
 # define DEFAULT_ITERATION_NBR 50
 
 # include <ft_printf.h>
@@ -50,6 +50,7 @@ void			mandelbrot(t_data *data);
 double		module(double a, double b);
 
 double		conv_rep_to_win(double x, double min, double max);
+double		conv_win_to_rep(double x, double min, double max);
 
 
 #endif

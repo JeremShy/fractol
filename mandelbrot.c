@@ -40,10 +40,10 @@ void mandelbrot(t_data *data)
 			if ((color = mb_is_on(a, b, data->iteration_number)) >= 0)
 				put_pixel_to_image(data, color, conv_rep_to_win(a, data->min_x, data->max_x), conv_rep_to_win(b, data->min_y, data->max_y));
 			// b = b + 1 / (WIN_SIZE / (data->max_y - data->min_y));
-			b = b + 1 / (WIN_SIZE / 4);
+			b = b + conv_win_to_rep(1, data->min_y, data->max_y);
 		}
 		// a = a + 1 / (WIN_SIZE / (data->max_x - data->min_x));
-		a = a + 1 / (WIN_SIZE / 4);
+		a = a + conv_win_to_rep(1, data->min_x, data->max_x);
 	}
 	ft_printf("Leaving mandelbrot();\n");
 }
