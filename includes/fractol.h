@@ -6,7 +6,6 @@
 # include <ft_printf.h>
 # include <libft.h>
 # include <mlx.h>
-
 typedef struct	s_data
 {
 	void	*mlx;
@@ -27,5 +26,8 @@ typedef struct	s_coord
 int				handle_error_void(void *variable, void *error_value, char *msg);
 void			put_pixel_to_image(t_data *data, int color, int x, int y);
 void			clear_image(t_data *data);
+int				get_color_code(int r, int v, int b);
+int				init_the_mlx(t_data *data);
+
 
 #endif
