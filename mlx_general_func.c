@@ -27,3 +27,10 @@ int	init_the_mlx(t_data *data)
 	}
 	return (1);
 }
+
+void free_mlx_and_exit(t_data *data)
+{
+	mlx_destroy_window(data->mlx, data->win);
+	mlx_destroy_image(data->mlx, data->img);
+	exit(EXIT_SUCCESS);
+}

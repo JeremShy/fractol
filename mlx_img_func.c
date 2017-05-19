@@ -28,3 +28,21 @@ void	clear_image(t_data *data)
 		i++;
 	}
 }
+
+void fill_image(t_data *data, int color)
+{
+	int	x;
+	int	y;
+
+		x = 0;
+		while (x < WIN_SIZE)
+		{
+			y = 0;
+			while (y < WIN_SIZE)
+			{
+				put_pixel_to_image(data, color, x, y);
+				y++;
+			}
+			x++;
+		}
+}

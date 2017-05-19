@@ -25,11 +25,15 @@ typedef struct	s_coord
 }				t_coord;
 
 int				handle_error_void(void *variable, void *error_value, char *msg);
+
 void			put_pixel_to_image(t_data *data, int color, int x, int y);
 void			clear_image(t_data *data);
+void			fill_image(t_data *data, int color);
 int				get_color_code(int r, int v, int b);
+
 int				init_the_mlx(t_data *data);
+void			free_mlx_and_exit(t_data *data);
+
 int				key_hook(int kc, void *param);
-int				loop_hook(void *param);
 
 #endif
