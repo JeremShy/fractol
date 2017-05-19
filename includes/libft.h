@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jcamhi <jcamhi@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 12:40:08 by jcamhi            #+#    #+#             */
-/*   Updated: 2017/05/18 17:44:51 by jcamhi           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
@@ -31,12 +19,11 @@ char				*ft_itoa_base(unsigned int nbr, int base);
 char				*ft_itoa_base_ll(long long nbr, int base);
 char				*ft_itoa_base_ull(unsigned long long nbr, int base);
 char				*ft_alloc_str(const char *str);
-int					get_next_line(int const fd, char **line);
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memcpy(void *dst,
-					const void *src, size_t n);
+		const void *src, size_t n);
 void				*ft_memccpy(void *dst,
-					const void *src, int c, size_t n);
+		const void *src, int c, size_t n);
 void				*ft_bzero(void *s, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -46,12 +33,12 @@ size_t				ft_wstrlen(const char *s);
 char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst,
-					const char *src, size_t n);
+		const char *src, size_t n);
 char				*ft_strcat(char *s1, const char *s2);
 size_t				ft_strlcat(char *dst,
-					const char *src, size_t size);
+		const char *src, size_t size);
 char				*ft_strncat(char *s1,
-					const char *s2, size_t n);
+		const char *s2, size_t n);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *s1, const char *s2);
@@ -92,6 +79,7 @@ void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 int					ft_atoi(const char *s);
+char				*ft_itoa(int n);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
@@ -102,11 +90,21 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					get_next_line(const int fd, char **line);
+
+typedef	struct		s_gnl
+{
+	char			*line;
+	int				fd;
+	struct s_gnl	*next;
+}					t_gnl;
+
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				*mallocp(size_t size);
 
 #endif

@@ -1,6 +1,6 @@
 #include <fractol.h>
 
-int handle_error_void(void *variable, void *error_value, char *msg)
+int	handle_error_void(void *variable, void *error_value, char *msg)
 {
 	if (variable == error_value)
 	{

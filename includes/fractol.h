@@ -6,6 +6,7 @@
 # include <ft_printf.h>
 # include <libft.h>
 # include <mlx.h>
+
 typedef struct	s_data
 {
 	void	*mlx;
@@ -13,7 +14,7 @@ typedef struct	s_data
 	void	*img;
 	char	*addr;
 	int		bpp;
-	int 	size_line;
+	int		size_line;
 	int		endian;
 }				t_data;
 
@@ -28,6 +29,7 @@ void			put_pixel_to_image(t_data *data, int color, int x, int y);
 void			clear_image(t_data *data);
 int				get_color_code(int r, int v, int b);
 int				init_the_mlx(t_data *data);
-
+int				key_hook(int kc, void *param);
+int				loop_hook(void *param);
 
 #endif
