@@ -5,7 +5,9 @@ SRC_NAME = main.c \
 						hook_func.c \
 						mandelbrot.c \
 						complexe_nbr.c \
-						calculs_repere.c
+						calculs_repere.c \
+						zoom.c \
+						key_event.c
 
 LIBFT_N = lib/libft.a
 LIBFTPRINTF_N = lib/libftprintf.a
@@ -69,6 +71,17 @@ fclean: clean
 #	make -C libsrcs/ft_printf fclean
 #	make -C libsrcs/mlx fclean
 #	@rmdir lib 2> /dev/null || true
+
+ffclean: clean fclean
+		make -C libsrcs/libft clean
+		make -C libsrcs/ft_printf clean
+		make -C libsrcs/mlx clean
+
+		make -C libsrcs/libft fclean
+		make -C libsrcs/ft_printf fclean
+		make -C libsrcs/mlx fclean
+		@rmdir lib 2> /dev/null || true
+
 
 re: fclean all
 

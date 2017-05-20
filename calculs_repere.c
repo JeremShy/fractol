@@ -1,6 +1,6 @@
 #include <fractol.h>
 
-double conv_rep_to_win(double x, double min, double max)
+double	conv_rep_to_win(double x, double min, double max)
 {
 	double	diff;
 	double	ret;
@@ -14,7 +14,7 @@ double conv_rep_to_win(double x, double min, double max)
 	return (ret);
 }
 
-double conv_win_to_rep(double x, double min, double max)
+double	conv_win_to_rep(double x, double min, double max)
 {
 	double	diff;
 	double	ret;
@@ -25,5 +25,5 @@ double conv_win_to_rep(double x, double min, double max)
 	max += diff;
 	prop = max / WIN_SIZE;
 	ret = (x * prop) - diff;
-	return ret;
+	return (ret);
 }

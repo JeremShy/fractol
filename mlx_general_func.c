@@ -1,6 +1,6 @@
 #include <fractol.h>
 
-int	init_the_mlx(t_data *data)
+int		init_the_mlx(t_data *data)
 {
 	data->mlx = mlx_init();
 	if (handle_error_void(data->mlx, NULL, "Error with mlx_init"))
@@ -28,7 +28,7 @@ int	init_the_mlx(t_data *data)
 	return (1);
 }
 
-void free_mlx_and_exit(t_data *data)
+void	free_mlx_and_exit(t_data *data)
 {
 	mlx_destroy_window(data->mlx, data->win);
 	mlx_destroy_image(data->mlx, data->img);

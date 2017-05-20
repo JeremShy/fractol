@@ -8,22 +8,23 @@
 # include <libft.h>
 # include <mlx.h>
 # include <math.h>
+
 typedef struct	s_data
 {
-	void					*mlx;
-	void					*win;
-	void					*img;
-	char					*addr;
-	int						bpp;
-	int						size_line;
-	int						endian;
+	void			*mlx;
+	void			*win;
+	void			*img;
+	char			*addr;
+	int				bpp;
+	int				size_line;
+	int				endian;
 	unsigned int	iteration_number;
-	double				scale;
-	double				min_x;
-	double				max_x;
-	double				min_y;
-	double				max_y;
-	void					(*fractal)();
+	double			scale;
+	double			min_x;
+	double			max_x;
+	double			min_y;
+	double			max_y;
+	void			(*fractal)();
 }				t_data;
 
 typedef struct	s_coord
@@ -43,14 +44,17 @@ int				init_the_mlx(t_data *data);
 void			free_mlx_and_exit(t_data *data);
 
 int				key_hook(int kc, void *param);
-int 			mouse_hook(int button, int x, int y, void *param);
+int				mouse_hook(int button, int x, int y, void *param);
 
 void			mandelbrot(t_data *data);
 
-double		module(double a, double b);
+double			module(double a, double b);
 
-double		conv_rep_to_win(double x, double min, double max);
-double		conv_win_to_rep(double x, double min, double max);
+double			conv_rep_to_win(double x, double min, double max);
+double			conv_win_to_rep(double x, double min, double max);
 
+void			zoom(t_data *data, double ratio_zoom, int x, int y);
+
+void			change_it_and_print(t_data *data, int it);
 
 #endif
