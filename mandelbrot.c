@@ -15,9 +15,9 @@ static int	mb_is_on(double a, double b, int max_iteration)
 		zatmp = za;
 		za = (za * za) - (zb * zb) + (a);
 		zb = (2 * zatmp * zb) + (b);
-		iteration++;
 		if (module(za, zb) > 2)
-			return (0xFFAAAA * (iteration * 100 / max_iteration) / 100);
+			return (0xFF00 * (iteration * 100 / max_iteration) / 100);
+		iteration++;
 	}
 	return (0);
 }
