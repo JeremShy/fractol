@@ -1,0 +1,6 @@
+**/*.o
+fractol
+**/*.dSYM
+**/*.a
+**/._*
+**/*.DS_Store
